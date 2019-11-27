@@ -10,6 +10,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import co.edureka.model.User;
 
@@ -43,10 +44,15 @@ public class HomeServlet extends HttpServlet {
 		
 		//out.print("<h3>URL Rewriting data :</h3>");
 		
-		String name=request.getParameter("name");
+	/*	String name=request.getParameter("name");
 		String email=request.getParameter("email");
 		String age=request.getParameter("age");
+		*/
 		
+		HttpSession session=request.getSession();
+		String name=(String)session.getAttribute("KeyName");
+		String email=(String)session.getAttribute("KeyEmail");
+		int age=(Integer)session.getAttribute("KeyAge");
 		
 		out.print("<h3>hello"+name+"</h3>");
 		out.print("<h3>email :"+email+"</h3>");

@@ -9,6 +9,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import co.edureka.db.JDBCHelper;
 import co.edureka.model.User;
@@ -64,7 +65,7 @@ public class LogIn extends HttpServlet {
 		//out.print("<br/><a href='Welcome?name"+name+"&email="+email+"&age"+age+"enter home'</a>");
 		
 		//3 technique hidden form field
-		
+		/*
 		String from ="<form action='Welcome' method='post>"
 				+"<input type='hidden' name='textName' value='"+name+"'/>"
 				+"<input type='hidden' name='textemail' value='"+email+"'/>"
@@ -72,9 +73,17 @@ public class LogIn extends HttpServlet {
 				+"<input type='submit' value='Enter home'/>"
 				+"</form>";
 		out.print(from);
+		*/
 		
 		
 		
+		
+		//session tracking - HttpSession API
+		HttpSession session=request.getSession();
+		session.setAttribute("KeyName",name);
+		session.setAttribute("KeyEmail",email);
+		session.setAttribute("KeyAge",age);
+		out.print("<br/><a href='Welcome'>Enter Home</a>");
 		
 		}
 		else
