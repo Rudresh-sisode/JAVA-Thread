@@ -22,6 +22,6 @@
       <generator class= "increment"/>     
      </id>
      <property name="cname" column="CName"/>
-     <one-to-one name="person" class="com.Person" cascade="all" constrained="true"></one-to-one>
+    
    </class>
  </hibernate-mapping>

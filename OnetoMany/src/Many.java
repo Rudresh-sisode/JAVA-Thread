@@ -59,13 +59,12 @@ public class Many {
 	    try{
 		Transaction tnx = session.beginTransaction();
 	
-	
-	
+		//session.save(mgr1);
+		//session.save(mgr2);
 		
-		
+		Manager mgr=(Manager)session.get(Manager.class, 2);
+		System.out.println(mgr);
 	
-		session.save(mgr1);
-		session.save(mgr2);
 		tnx.commit();
 		}
 		catch(Exception e)

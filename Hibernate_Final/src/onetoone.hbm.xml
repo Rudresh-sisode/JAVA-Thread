@@ -4,26 +4,23 @@
  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
   
  <hibernate-mapping> 
-   <class name="com.Person" table="Person">
-     <id name="pid" column="EmpId" type="int">
+   <class name="Manager" table="MANAGER">
+     <id name="mid" column="EmpId" type="int">
       <generator class= "increment"/>
      </id>
      <property name="name" column="FirstName" type="string"></property>
      <property name="email" column="Email" type="string"></property>
-     <property name="age" column="Age"></property>
+     <list name="clist" cascade="all">
+     
+     </list>
      <one-to-one name="adrs" class="com.Address" cascade="all"></one-to-one>
    </class>
    
-    <class name="com.Address" table="ADDRESS">
-     <id name="aid" column="EmpId" type="int">
-      <generator class= "foreign">
-      <param name="property">person</param>
-      </generator>
+    <class name="Certification" table="CERTIFICATES">
+     <id name="cid" column="CId" type="int">
+      <generator class= "increment"/>     
      </id>
-     <property name="city" column="CITY" type="string"></property>
-     <property name="state" column="STATE" type="string"></property>
-     <property name="zipCode" column="ZIPCODE"/>
-     <property name="adrsLine" column="Address"/>
+     <property name="cname" column="CName"/>
      <one-to-one name="person" class="com.Person" cascade="all" constrained="true"></one-to-one>
    </class>
  </hibernate-mapping>

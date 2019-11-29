@@ -32,6 +32,9 @@ public class ApplicationOnetoOne {
 	
 		SessionFactory sessionfactory =  new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 		Session session = sessionfactory.openSession();
+	    try{
+		Transaction tnx = session.beginTransaction();
+		//Employee e1=new Employee(); 
 		Person person=new Person();
 		person.setName("SohameRajput");
 		person.setAge(13);
@@ -44,10 +47,6 @@ public class ApplicationOnetoOne {
 		address.setZipCode(424206);
 		person.setAdrs(address);
 		address.setPerson(person);
-	    try{
-		Transaction tnx = session.beginTransaction();
-		//Employee e1=new Employee(); 
-		
 		
 		
 		
