@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping> 
+   <class name="com.Person" table="Person">
+     <id name="pid" column="EmpId" type="int">
+      <generator class= "increment"/>
+     </id>
+     <property name="pname" column="FirstName" type="string"></property>
+     <property name="email" column="Email" type="string"></property>
+     <property name="age" column="Age"></property>
+     <one-to-one name="adrs" class="com.Address" cascade="all"></one-to-one>
+   </class>
+   
+    <class name="com.Address" table="ADDRESS">
+     <id name="aid" column="EmpId" type="int">
+      <generator class= "foreign">
+      <param name="property">person</param>
+      </generator>
+     </id>
+     <property name="city" column="CITY" type="string"></property>
+     <property name="state" column="STATE" type="string"></property>
+     <property name="zipCode" column="ZIPCODE"/>
+     <property name="adrsLine" column="Address"/>
+     <one-to-one name="person" class="com.Address" cascade="all" constrained="true"></one-to-one>
+   </class>
+ </hibernate-mapping>
