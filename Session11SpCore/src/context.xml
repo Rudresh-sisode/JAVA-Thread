@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+  <!-- <bean id="s3" class="co.edureka.model.Student" scope="prototype"> --> 
+ <!--  <bean id="s3" class="co.edureka.model.Student" init-method="myInit" destroy-method="myDestroy">
+       <property name="roll" value="102"/>
+       <property name="name" value="Mide"/>
+       <property name="age" value="22"/>
+       <property name="email" value="mike@example.com"/>
+       <property name="address" value="Contry Homes"/>
+       
+   </bean>
+   <bean class="co.edureka.model.PostProcessor">
+   
+   
+   </bean> -->
+   <!-- <bean id="f3" class="co.edureka.model.Father">
+       <property name="name" value="Wings"/>
+       <property name="lname" value="Mide"/>
+       <property name="wealth" value="5245"/>
+      
+       
+   </bean>
+   
+   <bean id="sRef" class="co.edureka.model.Son" parent="f3">
+       <property name="name" value="Wings"/>
+  
+       <property name="vehical" value="5"/>
+      
+       
+   </bean>
+    -->
+    
+    <!-- <bean id="aRef" class="co.edureka.model.Address">
+       <property name="adrsLine" value="Sunview"/>
+       <property name="zipCode" value="654654"/>
+   </bean>
+   
+   <bean id="pRef" class="co.edureka.model.Person">
+       <property name="name" value="Sohame"/>
+  
+       <property name="age" value="20"/>
+       <property name="address" ref="aRef"/>
+       <property name="certificates">
+       <list>
+       <value>Aws</value>
+       <value>CCNA</value>
+       <value>RED HAT</value>
+       <value>Google cloud</value>
+       </list>
+       </property>
+      
+       
+   </bean>
+     -->
+     <bean id="ca" class="co.edureka.model.CA"/>
+     <bean id="cb" class="co.edureka.model.CB"/>
+    <context:annotation-config/>
+   
+<!-- so the module 12 has been pass time stamp 00:34:32  -->
+</beans>
