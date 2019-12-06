@@ -1,0 +1,42 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ConversionService WSDL service -->
+
+  <service name="Conversion" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://edureka.co"/>
+      <parameter name="wsdlServiceElement" value="ConversionService"/>
+      <parameter name="schemaQualified" value="http://edureka.co"/>
+      <parameter name="wsdlServicePort" value="Conversion"/>
+      <parameter name="className" value="co.edureka.ConversionSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Conversion"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="feetToInches" qname="operNS:feetToInches" xmlns:operNS="http://edureka.co" returnQName="retNS:feetToInchesReturn" xmlns:retNS="http://edureka.co" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:feets" xmlns:pns="http://edureka.co" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="mtrsToCms" qname="operNS:mtrsToCms" xmlns:operNS="http://edureka.co" returnQName="retNS:mtrsToCmsReturn" xmlns:retNS="http://edureka.co" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:mtrs" xmlns:pns="http://edureka.co" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="sayHello" qname="operNS:sayHello" xmlns:operNS="http://edureka.co" returnQName="retNS:sayHelloReturn" xmlns:retNS="http://edureka.co" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://edureka.co" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="registerUser" qname="operNS:registerUser" xmlns:operNS="http://edureka.co" returnQName="retNS:registerUserReturn" xmlns:retNS="http://edureka.co" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:email" xmlns:pns="http://edureka.co" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://edureka.co" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="dollarsToRupees" qname="operNS:dollarsToRupees" xmlns:operNS="http://edureka.co" returnQName="retNS:dollarsToRupeesReturn" xmlns:retNS="http://edureka.co" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:dollars" xmlns:pns="http://edureka.co" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="feetToInches sayHello dollarsToRupees mtrsToCms registerUser"/>
+
+  </service>
+</deployment>
