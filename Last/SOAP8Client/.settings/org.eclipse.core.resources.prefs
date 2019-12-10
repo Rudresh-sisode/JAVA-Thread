@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/DefaultNamespace/SayHello.java=UTF-8
+encoding//src/DefaultNamespace/SayHelloService.java=UTF-8
+encoding//src/DefaultNamespace/SayHelloServiceLocator.java=UTF-8
+encoding//src/DefaultNamespace/SayHelloSoapBindingStub.java=UTF-8
